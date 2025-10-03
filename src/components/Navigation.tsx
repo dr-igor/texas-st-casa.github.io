@@ -15,9 +15,9 @@ export function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">3749 Texas Casa</h1>
+              <h1 className="text-xl sm:text-2xl font-bold text-gray-900">3749 Texas Casa</h1>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <div className="ml-4 sm:ml-6 flex space-x-4 sm:space-x-8">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
