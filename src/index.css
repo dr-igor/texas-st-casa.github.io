@@ -1,3 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Support system color scheme preference */
+  --color-scheme: light dark;
+}
+
+/* Light mode is default */
+:root {
+  color-scheme: light;
+}
+
+/* Dark mode based on system preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
