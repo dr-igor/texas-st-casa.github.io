@@ -48,22 +48,31 @@ const plants: Plant[] = [
 
 export function Garden() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Garden</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Discover the beautiful plants that thrive in our Texas garden
-          </p>
+    <div className="min-h-screen">
+      {/* Hero Section with garden theme background */}
+      <div className="relative bg-gradient-to-br from-olive via-sage-green to-forest-green dark:from-graphite dark:via-forest-green dark:to-teal overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold text-white mb-4 drop-shadow-lg">Our Garden</h1>
+            <p className="text-xl text-stone-100">
+              Discover the beautiful plants that thrive in our Texas garden
+            </p>
+          </div>
         </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Tabs.Root defaultValue={plants[0].name} className="w-full">
-          <Tabs.List className="flex flex-wrap gap-2 border-b border-gray-200 dark:border-gray-700 mb-8">
+          <Tabs.List className="flex flex-wrap gap-3 mb-8 bg-white dark:bg-slate-800 rounded-xl p-2 shadow-lg">
             {plants.map((plant) => (
               <Tabs.Trigger
                 key={plant.name}
                 value={plant.name}
-                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:border-gray-300 border-b-2 border-transparent data-[state=active]:border-green-500 data-[state=active]:text-green-600 dark:data-[state=active]:text-green-400 transition-all"
+                className="px-6 py-3 text-sm font-medium rounded-lg text-stone dark:text-slate hover:text-forest-green dark:hover:text-sage-green transition-all data-[state=active]:bg-gradient-to-r data-[state=active]:from-sage-green data-[state=active]:to-forest-green data-[state=active]:text-white data-[state=active]:shadow-md"
               >
                 {plant.name}
               </Tabs.Trigger>
@@ -72,24 +81,24 @@ export function Garden() {
 
           {plants.map((plant) => (
             <Tabs.Content key={plant.name} value={plant.name}>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{plant.name}</h2>
-                <p className="text-sm italic text-gray-500 dark:text-gray-400 mb-6">{plant.scientificName}</p>
+              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8 border-t-4 border-terracotta dark:border-terracotta-light">
+                <h2 className="text-4xl font-bold text-forest-green dark:text-sage-green mb-2">{plant.name}</h2>
+                <p className="text-sm italic text-stone dark:text-slate mb-8">{plant.scientificName}</p>
 
-                <div className="grid gap-6 md:grid-cols-3">
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Description</h3>
-                    <p className="text-gray-700 dark:text-gray-300">{plant.description}</p>
+                <div className="grid gap-8 md:grid-cols-3">
+                  <div className="bg-stone-50 dark:bg-graphite rounded-xl p-6">
+                    <h3 className="text-xl font-semibold text-terracotta dark:text-terracotta-light mb-3">Description</h3>
+                    <p className="text-stone dark:text-slate leading-relaxed">{plant.description}</p>
                   </div>
 
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Care Instructions</h3>
-                    <p className="text-gray-700 dark:text-gray-300">{plant.care}</p>
+                  <div className="bg-stone-50 dark:bg-graphite rounded-xl p-6">
+                    <h3 className="text-xl font-semibold text-turquoise dark:text-turquoise-light mb-3">Care Instructions</h3>
+                    <p className="text-stone dark:text-slate leading-relaxed">{plant.care}</p>
                   </div>
 
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Blooming Season</h3>
-                    <p className="text-gray-700 dark:text-gray-300">{plant.season}</p>
+                  <div className="bg-stone-50 dark:bg-graphite rounded-xl p-6">
+                    <h3 className="text-xl font-semibold text-mustard dark:text-mustard-light mb-3">Blooming Season</h3>
+                    <p className="text-stone dark:text-slate leading-relaxed">{plant.season}</p>
                   </div>
                 </div>
               </div>
@@ -97,9 +106,9 @@ export function Garden() {
           ))}
         </Tabs.Root>
 
-        <div className="mt-12 bg-blue-50 dark:bg-gray-800 rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Garden Care Tips</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+        <div className="mt-12 bg-gradient-to-r from-sage-green to-olive dark:from-forest-green dark:to-teal rounded-2xl p-8 shadow-xl">
+          <h3 className="text-2xl font-bold text-white mb-4">Garden Care Tips</h3>
+          <ul className="list-disc list-inside space-y-3 text-stone-100">
             <li>Water deeply but infrequently to encourage deep root growth</li>
             <li>Mulch around plants to retain moisture and regulate soil temperature</li>
             <li>Native and adapted plants require less water and maintenance</li>
