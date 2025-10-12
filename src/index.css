@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+@theme {
+  /* Custom color palette - greens, browns, terracottas, mustard yellows, dark teal/turquoise, cool grays */
+  
+  /* Greens */
+  --color-sage-green: #6b7f5c;
+  --color-forest-green: #3d5a3c;
+  --color-olive: #6b7456;
+  
+  /* Browns */
+  --color-earth-brown: #7c5d4f;
+  --color-warm-brown: #8b6f47;
+  
+  /* Terracottas */
+  --color-terracotta: #c86f4c;
+  --color-terracotta-light: #d08968;
+  --color-terracotta-dark: #a84c2c;
+  
+  /* Mustard Yellows */
+  --color-mustard: #d4a337;
+  --color-mustard-light: #e0b84f;
+  
+  /* Dark Teal/Turquoise */
+  --color-teal: #2d5960;
+  --color-turquoise: #3e7f8c;
+  --color-turquoise-light: #5a9ba8;
+  
+  /* Cool Grays */
+  --color-stone: #8a8985;
+  --color-slate: #6b7280;
+  --color-graphite: #374151;
+  
+  /* Support system color scheme preference */
+  --color-scheme: light dark;
+  
+  /* Font family */
+  --font-display: "Poller One", system-ui, sans-serif;
+}
+
+/* Light mode is default */
+:root {
+  color-scheme: light;
+}
+
+/* Dark mode based on system preferences or manual toggle */
+:root.dark {
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+  }
+}
+
+/* Apply Poller One to headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poller One", system-ui, sans-serif;
+}
+
+/* MDX Prose styles */
+.prose {
+  max-width: 65ch;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  font-family: "Poller One", system-ui, sans-serif;
+  color: var(--color-forest-green);
+}
+
+.prose-invert h1, .prose-invert h2, .prose-invert h3 {
+  color: var(--color-sage-green);
+}
+
