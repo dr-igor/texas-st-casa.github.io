@@ -64,7 +64,27 @@ The built files will be in the `dist` directory.
 
 ## Deployment
 
-This site is configured for GitHub Pages deployment. The production build can be deployed to GitHub Pages.
+This site is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+### Automatic Deployment
+
+The site automatically deploys to GitHub Pages when changes are pushed to the `main` branch. The deployment workflow:
+
+1. Installs dependencies
+2. Builds the production bundle
+3. Deploys to GitHub Pages
+
+You can also manually trigger a deployment from the Actions tab in GitHub.
+
+### GitHub Pages Setup
+
+To enable GitHub Pages for this repository:
+
+1. Go to repository Settings > Pages
+2. Under "Build and deployment", select "GitHub Actions" as the source
+3. The workflow will automatically deploy on push to main
+
+The site will be available at: `https://dr-igor.github.io/texas-st-casa.github.io/`
 
 ## Project Structure
 
