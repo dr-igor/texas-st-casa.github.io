@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
 @theme {
   /* Custom color palette - greens, browns, terracottas, mustard yellows, dark teal/turquoise, cool grays */
@@ -57,5 +58,19 @@
 /* Apply Poller One to headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poller One", system-ui, sans-serif;
+}
+
+/* MDX Prose styles */
+.prose {
+  max-width: 65ch;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  font-family: "Poller One", system-ui, sans-serif;
+  color: var(--color-forest-green);
+}
+
+.prose-invert h1, .prose-invert h2, .prose-invert h3 {
+  color: var(--color-sage-green);
 }
 
